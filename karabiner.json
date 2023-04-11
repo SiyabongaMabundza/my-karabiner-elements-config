@@ -319,6 +319,34 @@
             },
             "to": [ { "shell_command": "/Users/imac/Library/Android/sdk/emulator/emulator -avd Pixel_3a_API_30_x86" } ],
             "type": "basic"
+        },
+{
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "tab_modifier",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "e"
+            },
+            "to": [ { "shell_command": "open -a '/Applications/Microsoft Edge.app'" } ],
+            "type": "basic"
+        },
+{
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "tab_modifier",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "n"
+            },
+            "to": [ { "shell_command": "open -a '/Applications/Notion.app'" } ],
+            "type": "basic"
         }
                         ]
                     }
