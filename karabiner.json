@@ -93,7 +93,7 @@
                         ]
                     },
                     {
-                        "description": "Hyper + i/j/k/l == vim directional Keys",
+                        "description": "Hyper + i/j/k/l == vim directional Keys & launcher",
                         "manipulators": [
                             {
                                 "from": {
@@ -192,6 +192,126 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+            "to": [ { "shell_command": "open -a '/Applications/Arc.app'" } ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+            "to": [ { "shell_command": "open -a '/Applications/iTerm.app'" } ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+            "to": [ { "shell_command": "open -a '/Applications/iTerm.app'" } ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+            "to": [ { "shell_command": "open -a 'Simulator.app'" } ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+            "to": [ { "shell_command": "open -a '/Applications/Obsidian.app'" } ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+            "to": [ { "shell_command": "/Users/imac/Library/Android/sdk/emulator/emulator -avd Pixel_3a_API_30_x86" } ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+            "to": [ { "shell_command": "open -a '/Applications/Microsoft Edge.app'" } ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+            "to": [ { "shell_command": "open -a '/Applications/Notion.app'" } ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -220,134 +340,6 @@
                                 ],
                                 "type": "basic"
                             }
-                        ]
-                    },
-		    {
-                        "description": "Tab app launcher",
-                        "manipulators": [
-			    {
-            "from": {
-                "key_code": "tab"
-            },
-            "to": [
-                {
-                    "set_variable": {
-                        "name": "tab_modifier",
-                        "value": 1
-                    }
-                },
-                {
-                    "key_code": "tab"
-                }
-            ],
-            "to_after_key_up": [
-                {
-                    "set_variable": {
-                        "name": "tab_modifier",
-                        "value": 0
-                    }
-                }
-            ],
-            "type": "basic"
-        },
-        {
-            "conditions": [
-                {
-                    "type": "variable_if",
-                    "name": "tab_modifier",
-                    "value": 1
-                }
-            ],
-            "from": {
-                "key_code": "a"
-            },
-            "to": [ { "shell_command": "open -a '/Applications/Arc.app'" } ],
-            "type": "basic"
-        },
-        {
-            "conditions": [
-                {
-                    "type": "variable_if",
-                    "name": "tab_modifier",
-                    "value": 1
-                }
-            ],
-            "from": {
-                "key_code": "t"
-            },
-            "to": [ { "shell_command": "open -a '/Applications/iTerm.app'" } ],
-            "type": "basic"
-        },
-        {
-            "conditions": [
-                {
-                    "type": "variable_if",
-                    "name": "tab_modifier",
-                    "value": 1
-                }
-            ],
-            "from": {
-                "key_code": "i"
-            },
-            "to": [ { "shell_command": "open -a 'Simulator.app'" } ],
-            "type": "basic"
-        },
-        {
-            "conditions": [
-                {
-                    "type": "variable_if",
-                    "name": "tab_modifier",
-                    "value": 1
-                }
-            ],
-            "from": {
-                "key_code": "o"
-            },
-            "to": [ { "shell_command": "open -a '/Applications/Obsidian.app'" } ],
-            "type": "basic"
-        },
-        {
-            "conditions": [
-                {
-                    "type": "variable_if",
-                    "name": "tab_modifier",
-                    "value": 1
-                }
-            ],
-            "from": {
-                "key_code": "d"
-            },
-            "to": [ { "shell_command": "/Users/imac/Library/Android/sdk/emulator/emulator -avd Pixel_3a_API_30_x86" } ],
-            "type": "basic"
-        },
-{
-            "conditions": [
-                {
-                    "type": "variable_if",
-                    "name": "tab_modifier",
-                    "value": 1
-                }
-            ],
-            "from": {
-                "key_code": "e"
-            },
-            "to": [ { "shell_command": "open -a '/Applications/Microsoft Edge.app'" } ],
-            "type": "basic"
-        },
-{
-            "conditions": [
-                {
-                    "type": "variable_if",
-                    "name": "tab_modifier",
-                    "value": 1
-                }
-            ],
-            "from": {
-                "key_code": "n"
-            },
-            "to": [ { "shell_command": "open -a '/Applications/Notion.app'" } ],
-            "type": "basic"
-        }
                         ]
                     }
                 ]
